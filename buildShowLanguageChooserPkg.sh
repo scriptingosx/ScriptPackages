@@ -17,7 +17,7 @@ if [[ ! -d "${payloadfolder}" ]]; then
 fi
 
 # touch the file
-touch "${payloadfolder}/.ShowLanguageChooserToo"
+touch "${payloadfolder}/.RunLanguageChooserToo"
 
 # create a PackageInfo.xml to require a reboot
 echo '<?xml version="1.0" encoding="utf-8" standalone="no"?><pkg-info postinstall-action="restart"/>' > "${projectfolder}/PackageInfo.xml"
