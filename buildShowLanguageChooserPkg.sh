@@ -8,7 +8,7 @@ identifier="com.scriptingosx.${pkgname}"
 install_location="/private/var/db/"
 
 scriptfolder=$(dirname "$0")
-projectfolder="${scriptfolder}/${pkgname}"
+projectfolder=$(mktemp -d)
 payloadfolder="${projectfolder}/payload"
 
 # create a projectfolder with a payload folder
@@ -20,7 +20,6 @@ fi
 touch "${payloadfolder}/.ShowLanguageChooserToo"
 
 # create a PackageInfo.xml to require a reboot
-
 echo '<?xml version="1.0" encoding="utf-8" standalone="no"?><pkg-info postinstall-action="restart"/>' > "${projectfolder}/PackageInfo.xml"
 
 # build the component package

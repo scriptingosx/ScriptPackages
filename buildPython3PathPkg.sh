@@ -8,7 +8,7 @@ identifier="com.scriptingosx.${pkgname}"
 install_location="/private/etc/paths.d/"
 
 scriptfolder=$(dirname "$0")
-projectfolder="${scriptfolder}/${pkgname}"
+projectfolder=$(mktemp -d)
 payloadfolder="${projectfolder}/payload"
 
 # create a projectfolder with a payload folder
